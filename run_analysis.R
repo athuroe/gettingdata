@@ -58,3 +58,4 @@ names(merged_all) <- gsub("std", "Std", names(merged_all), fixed = TRUE)
 ##Create new data frame with the average of each variable for each activity and each subject
 library(dplyr)
 merged_summary <- merged_all %>% group_by(activity, subject) %>% summarise_each(funs(mean))
+write.table(merged_summary, "tidy_data.txt", row.name = FALSE)

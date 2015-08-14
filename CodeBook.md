@@ -96,14 +96,15 @@ run_analysis.R produces a subset of the original dataset measurements containing
 The cleaned up data that is produced by the script "run_analysis.R" is created through the following steps.
 
 ###What the script does - Step by step
-1. Read in all files into memory using read.table and these parameters (header=F, fill=T for all as well as stringsAsFactors = F for the activities and features data    
+1. Read in all files into memory using read.table and these parameters header=F, fill=T for all as well as stringsAsFactors = F for the activities and features data    
 2. Subject, activity and measurement data is stiched together using 'cbind' 
 3. Column names are put in place and, if necessary, cleaned up
 4. The measurements originally divided into "test" and "train" are merged into one data frame using 'rbind'
-5. Each measurment that is a mean or std of a measurement is extracted using subsetting by '[]' together with the 'grepl' looking for column labels with the patterns "mean()" and "std()". Note - the "()" is included to avoid extracting measurments that include a "mean" or "standard deviation" in itself eg. "fBodyAccJerk-meanFreq()-X"
+5. Each measurment that is a mean or std of a measurement is extracted using subsetting by '[]' together with the 'grepl' command looking for column labels with the patterns "mean()" and "std()". Note - the "()" is included to avoid extracting measurments that include a "mean" or "standard deviation" in itself eg. "fBodyAccJerk-meanFreq()-X"
 6. The activity ID integer variable is replaced by descriptive activity names, using 'merge' on the activity_lables and the measurment data
 7. The column names of the measurements are cleaned up from ".", "()" and "-" for easier reading and better handling by R commands
 8. A new data frame called "merged_summary" is created with the average measurement per activity and subject using the 'group_by' and 'summarise_each' commands combined into one line using the '%>%' operator
+9. Stores the new dataframe in a file called "tidy_data.txt", using the 'write.table' command on merged_summary with the parameter row.name = FALSE
 
 The original dataset that is the basis for this data can be downloaded here: 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'. For details on how the original data was obtained please refer to the 'readme.txt' in the original data folder.
 
