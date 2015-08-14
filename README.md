@@ -2,7 +2,6 @@
 title: "Instructions for the script run_analysis.R"
 author: "Andreas Thuröe"
 date: "Thursday, August 13, 2015"
-output: html_document
 ---
 
 ##Introduction
@@ -15,11 +14,11 @@ The script is assuming that the raw data is available in your working directory.
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 
-##How it works
+##What it does
 run_analysis.R does the following:  
-* Reads in the acceleromter raw data (distributed in test and train data)  
-* Reads in other variables (subject, activity)  
-* Merges test and train data into one dataframe  
-* Extracts only the measurments that are mean and standard deviations  
-* Adds and cleans up descriptive variable names  
+* Reads in the acceleromter raw data (currently divided into two files "X_train.txt" and "X_test.txt")  
+* Reads in other variables (subject, activity and measurement names)  
+* Merges the test and train data into one dataframe  
+* Extracts the measurments that are mean and standard deviations  
+* Adds and cleans up variable names to make sure they are descriptive and compatible with R commands
 * Creates a new dataframe with the average of each remaining variable for each activity and each subject  

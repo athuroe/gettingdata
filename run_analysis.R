@@ -25,11 +25,11 @@ names(subject_train) <- "subject"
 names(y_test) <- "activity_id"
 names(y_train) <- "activity_id"
 
-##Insert activity into test & train data
+##Stich together activity and measurement data
 test_all <- cbind(y_test, X_test)
 train_all <- cbind(y_train, X_train)
 
-##Insert subject test & train data
+##Stich togehter subject and measurement data
 test_all <- cbind(subject_test, test_all)
 train_all <- cbind(subject_train, train_all)
 
