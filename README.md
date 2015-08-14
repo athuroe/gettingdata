@@ -20,7 +20,6 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 The output of the script is a tidy dataset including the AVERAGE of the MEAN and STANDARD DEVIATION measurements per subject and activity
 
 ##Instructions
-run_analysis.R does the following:  
 1. Download data from link above and extract it into your R working directory (Keep the internal file structure of the downloaded package.)
 2. Run the script "run_analysis.R"
 3. The resulting dataframe is stored in a file called "tidy_data.txt"
