@@ -89,10 +89,12 @@ The experiments were carried out with a group of 30 volunteers within an age bra
 * "fBodyBodyGyroMagStd"
 * "fBodyBodyGyroJerkMagStd"
 
-run_analysis.R produces a subset of the original dataset measurements containing only the measurements above which are the Mean and the Standard Deviation of each measurement in the original data. Names have been cleaned (removed parentheses and dashes) for more efficient handling in R. Please refer to 'features_info.txt' in the original dataset for more detailed information on the measurements.
+run_analysis.R produces a subset of the original dataset measurements containing only the avereages per subject and activity of the measurements above which are the Mean and the Standard Deviation of each measurement in the original data. Names have been cleaned (removed parentheses and dashes) for more efficient handling in R. Please refer to 'features_info.txt' in the original dataset for more detailed information on the measurements.
 
 
 ##Study Design
+The original data that is the basis for the dataset produced by 'run_analysis.R' can be downloaded here: 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'. For details on how the original data was obtained please refer to the 'readme.txt' in the original data folder.
+
 The cleaned up data that is produced by the script "run_analysis.R" is created through the following steps.
 
 ###What the script does - Step by step
@@ -106,5 +108,5 @@ The cleaned up data that is produced by the script "run_analysis.R" is created t
 8. A new data frame called "merged_summary" is created with the average measurement per activity and subject using the 'group_by' and 'summarise_each' commands combined into one line using the '%>%' operator
 9. Stores the new dataframe in a file called "tidy_data.txt", using the 'write.table' command on merged_summary with the parameter row.name = FALSE
 
-The original dataset that is the basis for this data can be downloaded here: 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'. For details on how the original data was obtained please refer to the 'readme.txt' in the original data folder.
+
 
